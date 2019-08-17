@@ -1,11 +1,4 @@
-# flask-salary-predictor
-This is project predicts the salary of the employee based on the experience.
+Salary Predictor
+------
 
-# Model
-model.py trains and saves the model to the disk.
-
-# Server
-server.py contains all the requiered for flask and to manage APIs.
-
-# Request
-request.py contains the python code to process POST request to server.
+A simple flask web app to predict salaries of employees based on their experience.
