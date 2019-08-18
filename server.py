@@ -1,12 +1,10 @@
-# Create API of ML model using flask
-
 '''
-This code takes the JSON data while POST request an performs the prediction using loaded model and returns
+This code takes the JSON data as POST request and performs the prediction using loaded model and returns
 the results in JSON format.
 '''
 
 # Import libraries
-import numpy as np
+from numpy import array
 from flask import Flask, request, jsonify
 import pickle
 
@@ -21,7 +19,7 @@ def predict():
     data = request.get_json(force=True)
 
     # Make prediction using model loaded from disk as per the data.
-    prediction = model.predict([[np.array(data['exp'])]])
+    prediction = model.predict([[array(data['exp'])]])
 
     # Take the first value of prediction
     output = prediction[0]
