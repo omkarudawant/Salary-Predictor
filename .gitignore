@@ -3,7 +3,7 @@ instance/
 .webassets-cache
 # input data and models
 input/
-models/
+model/
 
 # data files
 *.csv

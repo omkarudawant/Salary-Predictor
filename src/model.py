@@ -6,7 +6,7 @@ import joblib
 
 
 # Importing the dataset
-dataset = read_csv('../Salary_Data.csv')
+dataset = read_csv('../input/Salary_Data.csv')
 X = dataset.drop(['Salary'], axis=1).values
 y = dataset['Salary'].values
 
