@@ -1,19 +1,11 @@
-'''
-This code takes the JSON data as POST request and performs the prediction using loaded model and returns
-the results in JSON format.
-'''
-
 # Import libraries
 from numpy import array
 from flask import Flask, request, jsonify
-import pickle
+import joblib
 
 app = Flask(__name__)
 
-# Load the model
-model = pickle.load(open('model.pkl','rb'))
-
-@app.route('/api',methods=['POST'])
+@app.route('/', methods=['POST'])
 def predict():
     # Get the data from the POST request.
     data = request.get_json(force=True)
@@ -26,5 +18,9 @@ def predict():
 
     return jsonify(output)
 
+
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+	# Load the model
+	model = joblib.load('../model/model.joblib')
+	print(' * Model loaded successfully !!!')
+	app.run(debug=False)
